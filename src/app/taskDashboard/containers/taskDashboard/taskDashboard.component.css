@@ -1,0 +1,62 @@
+table {
+  max-width: 40em;
+  margin:auto;
+  margin-top: -0.1em;
+  font-size: 1.5em;
+}
+
+.dashboard {
+  margin:auto;
+}
+ 
+h2 {
+  margin-top: 1em;
+  color:#b5b1b0;
+}
+
+app-task-form {
+  margin-bottom: 20em;
+}
+
+button {
+ border: none; 
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+}
+
+.my-pagination::ng-deep .page-item.active .page-link {
+  z-index: 1;
+  color: #fbfbfb;
+  background-color:#9c9c9c !important;
+  border: none;
+  border-radius: 20%;
+  opacity: 60%;
+  margin: 0 .5em;
+}
+
+.my-pagination::ng-deep .page-item .page-link {
+  z-index: 1;
+  color: #333333;
+  background-color:transparent !important;
+  border: none;
+  border-radius: 50%;
+  opacity: 60%;
+  margin: 0 .5em;
+  text-decoration: none;
+}
+
+
+.my-pagination .page-item {
+  border: none !important;
+}
+
+ul {
+  background-color: red !important;
+}

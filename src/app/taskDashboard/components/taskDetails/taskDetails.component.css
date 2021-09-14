@@ -1,0 +1,84 @@
+td {
+  border: none;
+}
+
+button {
+  width: 80%;
+}
+
+small {
+  margin-top: 1em;
+  font-size: 0.6em;
+  color: #bbbbbb;
+  font-family: Helvetica, Arial, sans-serif;
+  letter-spacing: 0.07em;
+}
+
+.deleteButton {
+  background-color: transparent;
+}
+
+.btn-active {
+  background-color: #a7a7a7;
+  color: white;
+}
+
+.btn-active:hover {
+  animation-name: btnActiveHover;
+  animation-duration: 0.2s;
+  background-color: #616161;
+}
+
+.btn-secondary:hover {
+  animation-name: btnInactiveHover;
+  animation-duration: 0.2s;
+  background-color: #d4d4d4;
+}
+
+.btn-active:not(:hover) {
+  animation-name: btnActiveNotHover;
+  animation-duration: 0.2s;
+  background-color: #a7a7a7;
+}
+
+.btn-secondary:not(:hover) {
+  animation-name: btnInactiveNotHover;
+  animation-duration: 0.2s;
+  background-color: #efefef;
+}
+
+@keyframes btnActiveHover {
+  0% {
+    background-color: #a7a7a7;
+  }
+  100% {
+    background-color: #616161;
+  }
+}
+
+@keyframes btnInactiveHover {
+  0% {
+    background-color: #efefef;
+  }
+  100% {
+    background-color: #d4d4d4;
+  }
+}
+
+@keyframes btnActiveNotHover {
+  0% {
+    background-color: #616161;
+  }
+  100% {
+    background-color: #a7a7a7;
+  }
+}
+
+@keyframes btnInactiveNotHover {
+  0% {
+    background-color: #d4d4d4;
+  }
+  100% {
+    background-color: #efefef;
+  }
+}

@@ -1,0 +1,8 @@
+<form [formGroup]="newTaskForm" (ngSubmit)="handleSubmit()" novalidate>
+  <div class="input-group">
+    <input type="text" placeholder="Add new task" class="form-control input-lg" required formControlName="description">
+    <span class="input-group-btn">
+      <button [disabled]="!newTaskForm.valid" type="submit" class="btn btn-active btn-lg"> &#9654;</button>
+    </span>
+  </div>
+</form>
