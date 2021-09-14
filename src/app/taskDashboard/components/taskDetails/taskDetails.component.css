@@ -47,6 +47,11 @@ small {
   background-color: #efefef;
 }
 
+.inactive {
+  text-decoration: line-through;
+  color:#d1d1d1;
+}
+
 @keyframes btnActiveHover {
   0% {
     background-color: #a7a7a7;
@@ -82,3 +87,4 @@ small {
     background-color: #efefef;
   }
 }
+

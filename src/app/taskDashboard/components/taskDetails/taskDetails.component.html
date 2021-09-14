@@ -4,7 +4,7 @@
 </td>
 <td class="text-justify col-md-9" tooltip="Double click to edit!" triggers="hover">
   <form [formGroup]="editForm" (ngSubmit)="handleSubmit()" novalidate>
-    <span class="taskDescription" *ngIf="!editing" (dblclick)="toggleEditing()"> {{task.description}}
+    <span class="taskDescription" *ngIf="!editing" [ngClass]="{'inactive': !task.active}" (dblclick)="toggleEditing()"> {{task.description}}
     </span>
     <input *ngIf="editing" class="form-control" maxlength="30" formControlName="description" (blur)="toggleEditing()"
       (keyup.enter)="toggleEditing()" type="text" required #input>
