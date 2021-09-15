@@ -46,18 +46,11 @@ export class taskDetailsComponent {
     });
   }
 
-  ngAfterViewInit() {
-    console.log(this.input);
-    console.log(this.btn);
-  }
-
   toggleEditing() {
     this.editing = !this.editing;
     this.cd.detectChanges();
-    if (this.editing) {
-      console.log(this.input);
+    if (this.editing)
       this.input.nativeElement.focus();
-    }
   }
 
   handleSubmit() {
