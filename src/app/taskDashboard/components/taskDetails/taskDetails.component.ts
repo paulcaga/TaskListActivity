@@ -3,6 +3,8 @@ import {
   Input,
   Output,
   EventEmitter,
+  ViewChild,
+  ElementRef,
   ChangeDetectorRef,
 } from '@angular/core';
 import { Task } from 'src/app/models/Task';
@@ -14,8 +16,12 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['taskDetails.component.css'],
 })
 export class taskDetailsComponent {
-  constructor(private Ref: ChangeDetectorRef) {}
-
+  constructor(private cd: ChangeDetectorRef) {}
+  private input!: ElementRef;
+  @ViewChild('input', { static: false }) set content(content: ElementRef) {
+    if (content) this.input = content;
+  }
+  @ViewChild('btn') btn!: ElementRef;
   @Input()
   task: any;
   @Input()
@@ -40,13 +46,22 @@ export class taskDetailsComponent {
     });
   }
 
+  ngAfterViewInit() {
+    console.log(this.input);
+    console.log(this.btn);
+  }
+
   toggleEditing() {
-    this.editing = !this.editing
+    this.editing = !this.editing;
+    this.cd.detectChanges();
+    if (this.editing) {
+      console.log(this.input);
+      this.input.nativeElement.focus();
+    }
   }
 
   handleSubmit() {
     this.task.description = this.editForm.get('description')?.value;
-    this.Ref.detectChanges();
     this.edit.emit(this.task);
   }
 
