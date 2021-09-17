@@ -15,6 +15,7 @@ export class taskFormComponent {
   @Output()
   add: EventEmitter<string> = new EventEmitter<string>()
 
+  //emits an add event to add new task then resets input value
   handleSubmit() {
     this.add.emit(this.newTaskForm.value.description)
     this.newTaskForm.reset()

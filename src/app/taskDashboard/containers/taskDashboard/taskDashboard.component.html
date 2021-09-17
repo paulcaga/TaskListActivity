@@ -3,7 +3,6 @@
   <h1>Tasks</h1>
 </div>
 
-
 <div class="container dashboard">
   <app-task-form (add)="handleAdd($event)"></app-task-form>
   <table class="table table-borderless">
@@ -13,24 +12,24 @@
       [task]="task"
       (edit)="handleEdit($event)"
       (mouseenter)="mouseEnter(i)"
-      (mouseleave)="mouseLeave(i)"
+      (mouseleave)="mouseLeave()"
       (delete)="handleDelete($event)"
       [showDeleteButton]="currentlyHovered==i?true:false"
       >
       </tr>
     </tbody>
   </table>
-  <div class="bruh">
+  <div>
     <pagination [boundaryLinks]="false" 
-    [directionLinks]="true" 
-    [totalItems]="tasks.length"
-    [itemsPerPage]="7"
-    (pageChanged)="pageChanged($event)"
-    previousText="&lsaquo;" nextText="&rsaquo;"
-    class="navbar-fixed-bottom my-pagination"
-    [customPreviousTemplate]="prevTemplate"
-    [customNextTemplate]="nextTemplate"
-    [customPageTemplate]="pageTemplate"
+      [directionLinks]="true" 
+      [totalItems]="tasks.length"
+      [itemsPerPage]="7"
+      (pageChanged)="pageChanged($event)"
+      previousText="&lsaquo;" nextText="&rsaquo;"
+      class="navbar-fixed-bottom my-pagination"
+      [customPreviousTemplate]="prevTemplate"
+      [customNextTemplate]="nextTemplate"
+      [customPageTemplate]="pageTemplate"
     ></pagination>
 
     <ng-template class='page-template' #pageTemplate let-page let-disabled="disabled" let-currentPage="currentPage">
@@ -40,7 +39,6 @@
     <ng-template #nextTemplate let-disabled="disabled" let-currentPage="currentPage">
       <ng-container>
         <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-        
       </ng-container>
     </ng-template>
      
@@ -50,7 +48,6 @@
       </ng-container>
     </ng-template>
   </div>
-
 
   <h2 class="text-center">{{ tasks.length ? '' : 'No tasks found. Let\'s add one!' }}</h2>
 

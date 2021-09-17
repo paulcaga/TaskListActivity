@@ -14,10 +14,6 @@ h2 {
   color:#b5b1b0;
 }
 
-app-task-form {
-  margin-bottom: 20em;
-}
-
 button {
  border: none; 
 }
@@ -51,7 +47,6 @@ button {
   margin: 0 .5em;
   text-decoration: none;
 }
-
 
 .my-pagination .page-item {
   border: none !important;
